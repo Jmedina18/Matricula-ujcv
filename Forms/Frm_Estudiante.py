@@ -23,7 +23,6 @@ def listar_estudiantes():
         output_text.insert(tk.END, f"{estudiante}\n")
 
 def editar_estudiante():
-    def editar_estudiante():
     id_estudiante = int(entry_id.get())
     estudiante_actualizado = {
         'ID_Estudiante': id_estudiante,
