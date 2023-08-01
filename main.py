@@ -15,7 +15,7 @@ def mostrar_menu_principal():
 def mostrar_menu_estudiantes():
     print("\n===== MENÚ ESTUDIANTES =====")
     print("1. Agregar Estudiante")
-    print("2. Ver Estudiantes")
+    print("2. Listar Estudiantes")
     print("3. Actualizar Estudiante")
     print("4. Eliminar Estudiante")
     print("0. Volver al Menú Principal\n")
@@ -23,7 +23,7 @@ def mostrar_menu_estudiantes():
 def mostrar_menu_profesores():
     print("\n===== MENÚ PROFESORES =====")
     print("1. Agregar Profesor")
-    print("2. Ver Profesores")
+    print("2. Listar Profesores")
     print("3. Actualizar Profesor")
     print("4. Eliminar Profesor")
     print("0. Volver al Menú Principal\n")
@@ -31,7 +31,7 @@ def mostrar_menu_profesores():
 def mostrar_menu_cursos():
     print("\n===== MENÚ CURSOS =====")
     print("1. Agregar Curso")
-    print("2. Ver Cursos")
+    print("2. Listar Cursos")
     print("3. Actualizar Curso")
     print("4. Eliminar Curso")
     print("0. Volver al Menú Principal\n")
@@ -39,7 +39,7 @@ def mostrar_menu_cursos():
 def mostrar_menu_matriculas():
     print("\n===== MENÚ MATRICULAS =====")
     print("1. Agregar Matricula")
-    print("2. Ver Matriculas")
+    print("2. Listar Matriculas")
     print("3. Actualizar Matricula")
     print("4. Eliminar Matricula")
     print("0. Volver al Menú Principal\n")
@@ -47,7 +47,7 @@ def mostrar_menu_matriculas():
 def mostrar_menu_plan_estudios():
     print("\n===== MENÚ PLAN DE ESTUDIOS =====")
     print("1. Agregar Plan de Estudios")
-    print("2. Ver Planes de Estudios")
+    print("2. Listar Planes de Estudios")
     print("3. Actualizar Plan de Estudios")
     print("4. Eliminar Plan de Estudios")
     print("0. Volver al Menú Principal\n")
@@ -55,7 +55,7 @@ def mostrar_menu_plan_estudios():
 def mostrar_menu_plan_estudio_curso():
     print("\n===== MENÚ PLAN DE ESTUDIO CURSO =====")
     print("1. Agregar Curso al Plan de Estudio")
-    print("2. Ver Cursos del Plan de Estudio")
+    print("2. Listar Cursos del Plan de Estudio")
     print("3. Actualizar Plan de Estudios")
     print("4. Eliminar Curso del Plan de Estudio")
     print("0. Volver al Menú Principal\n")
