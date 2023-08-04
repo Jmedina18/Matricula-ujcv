@@ -1,37 +1,100 @@
-from Data.Conexion import connection
+from Data.Conexion import Conexion
 
-def create_plan_estudios(plan_estudios):
-    query = "INSERT INTO PlanDeEstudios (ID_PlanDeEstudios, CarreraProgramaAsociado) VALUES (?, ?)"
-    values = (
-        plan_estudios['ID_PlanDeEstudios'],
-        plan_estudios['CarreraProgramaAsociado']
-    )
+class Plan_de_Estudio:
+    _instance = None
 
-    cursor = connection.cursor()
-    cursor.execute(query, values)
-    connection.commit()
-    cursor.close()
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Plan_de_Estudio, cls).__new__(cls)
+        return cls._instance
 
-def read_plan_estudios():
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM PlanDeEstudios")
-    planes_estudios = cursor.fetchall()
-    return planes_estudios
+    def __init__(self):
+        self._ID_PlanDeEstudios = None
+        self._NombrePlanEstudio = None
+        self._FechaAprobacion = None
+        self._conexion = Conexion()
 
-def update_plan_estudios(plan_estudios):
-    query = "UPDATE PlanDeEstudios SET CarreraProgramaAsociado=? WHERE ID_PlanDeEstudios=?"
-    values = (
-        plan_estudios['CarreraProgramaAsociado'],
-        plan_estudios['ID_PlanDeEstudios']
-    )
+    @property
+    def ID_PlanEstudio(self):
+        return self._ID_PlanEstudio
 
-    cursor = connection.cursor()
-    cursor.execute(query, values)
-    connection.commit()
-    cursor.close()
+    @ID_PlanEstudio.setter
+    def ID_PlanEstudio(self, value):
+        if isinstance(value, int):
+            self._ID_PlanEstudio = value
+        else:
+            raise ValueError("ID_PlanDeEstudios debe ser un valor entero.")
 
-def delete_plan_estudios(id_plan_estudios):
-    cursor = connection.cursor()
-    cursor.execute("DELETE FROM PlanDeEstudios WHERE ID_PlanDeEstudios=?", id_plan_estudios)
-    connection.commit()
-    cursor.close()
+    @property
+    def NombrePlanEstudio(self):
+        return self._NombrePlanEstudio
+
+    @NombrePlanEstudio.setter
+    def NombrePlanEstudio(self, value):
+        if isinstance(value, str):
+            self._NombrePlanEstudio = value
+        else:
+            raise ValueError("NombrePlanEstudio debe ser una cadena de texto.")
+
+    @property
+    def FechaAprobacion(self):
+        return self._FechaAprobacion
+
+    @FechaAprobacion.setter
+    def FechaAprobacion(self, value):
+        if isinstance(value, str):
+            self._FechaAprobacion = value
+        else:
+            raise ValueError("FechaAprobacion debe ser una cadena de texto.")
+
+
+    def create_plan_estudio(self, plan_estudio):
+        conn = self._conexion._connection
+
+        query = "INSERT INTO PlanDeEstudios (ID_PlanDeEstudios, NombrePlanEstudio, FechaAprobacion, ) VALUES (?, ?, ?, ?)"
+        values = (
+            plan_estudio.ID_PlanDeEstudios,
+            plan_estudio.NombrePlanEstudio,
+            plan_estudio.FechaAprobacion, 
+        )
+
+        cursor = conn.cursor()
+        cursor.execute(query, values)
+        conn.commit()
+        cursor.close()
+
+    def read_plan_estudio(self):
+        conn = self._conexion._connection
+
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM PlanDeEstudios")
+        planes_estudio = cursor.fetchall()
+        cursor.close()
+
+        return planes_estudio
+
+    def update_plan_estudio(self, plan_estudio):
+        conn = self._conexion._connection
+
+        query = "UPDATE PlanDeEstudios SET NombrePlanEstudio=?, FechaAprobacion=?, =? WHERE ID_PlanDeEstudios=?"
+        values = (
+            plan_estudio.NombrePlanEstudio,
+            plan_estudio.FechaAprobacion,
+            plan_estudio.ID_PlanDeEstudios
+        )
+
+        cursor = conn.cursor()
+        cursor.execute(query, values)
+        conn.commit()
+        cursor.close()
+
+    def delete_plan_estudio(self, id_plan_estudio):
+        conn = self._conexion._connection
+
+        query = "DELETE FROM PlanDeEstudios WHERE ID_PlanDeEstudios=?"
+        values = (id_plan_estudio,)
+
+        cursor = conn.cursor()
+        cursor.execute(query, values)
+        conn.commit()
+        cursor.close()

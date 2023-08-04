@@ -1,4 +1,4 @@
-from Logic import Student, Profesor, Curso, Matricula, Plan_de_Estudio, Plan_Estudios_Curso
+from Logic import Profesor, Curso, Matricula, Plan_de_Estudio, Plan_Estudios_Curso, Student
 
 # Funciones de los menus principales
 
