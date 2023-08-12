@@ -1,0 +1,14 @@
+from Gui import Student_Gui, Profesor_Gui, Plan_Estudios_Curso_Gui, Plan_de_Estudio_Gui,Matricula_Gui, Curso_Gui
+import tkinter as tk
+
+if __name__ == "__main__":
+    root = tk.Tk()  # Crear una instancia de Tkinter
+    
+    #student_gui = Student_Gui.StudentGUI(root)  # Crear una instancia de la clase StudentGUI
+    #profesor_gui = Profesor_Gui.ProfesorGUI(root)  # Crear una instancia de la clase ProfesorGUI
+    #plan_estudios_curso_gui = Plan_Estudios_Curso_Gui.Plan_Estudios_Curso_Gui(root)
+    #plan_estudio_gui = Plan_de_Estudio_Gui.Plan_de_Estudio_Gui(root)
+    #matricula_gui = Matricula_Gui.Matricula_Gui(root)
+    #curso_gui = Curso_Gui.Curso_Gui(root)
+
+    root.mainloop()
