@@ -114,10 +114,10 @@ class Student:
 
     @AnioIngreso.setter
     def AnioIngreso(self, value):
-        if isinstance(value, int):
+        if isinstance(value, str):
             self._AnioIngreso = value
         else:
-            raise ValueError("AnioIngreso debe ser un valor entero.")
+            raise ValueError("AnioIngreso debe ser una cadena de texto")
 
     def create_student(self, student):
         conn = self._conexion._connection

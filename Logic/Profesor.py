@@ -155,7 +155,6 @@ class Profesor:
 
         query = "UPDATE Profesor SET NombreCompleto=?, FechaNacimiento=?, Genero=?, Direccion=?, CorreoElectronico=?, TelefonoContacto=?, AreaEspecializacion=?, FechaIngreso=? WHERE ID_Profesor=?"
         values = (
-            profesor['ID_Profesor'],
             profesor['NombreCompleto'],
             profesor['FechaNacimiento'],
             profesor['Genero'],
@@ -163,7 +162,8 @@ class Profesor:
             profesor['CorreoElectronico'],
             profesor['TelefonoContacto'],
             profesor['AreaEspecializacion'],
-            profesor['FechaIngreso']
+            profesor['FechaIngreso'],
+            profesor['ID_Profesor']
         )
 
         cursor = conn.cursor()
