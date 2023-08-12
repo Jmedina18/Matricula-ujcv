@@ -220,7 +220,6 @@ class ProfesorGUI:
 
                 for datos_profesor in profesores:
                     if datos_profesor[0] == id_profesor:  # Verificar el ID del profesor
-                        print(datos_profesor) # Agregar este print para verificar los datos
                         # Cargar los datos del profesor en los campos de entrada
                         self.entry_nombre.delete(0, tk.END)
                         self.entry_nombre.insert(0, datos_profesor[1])
